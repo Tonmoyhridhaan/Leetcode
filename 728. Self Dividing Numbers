@@ -1,0 +1,19 @@
+class Solution {
+public:
+    bool isValid(int x){
+        int n=x;
+        while(x){
+            int d=x%10;
+            if(d==0||n%d!=0) return 0;
+            x=x/10;
+        }
+        return 1;
+    }
+    vector<int> selfDividingNumbers(int left, int right) {
+        vector<int>ans;
+        for(int i=left;i<=right;i++){
+            if(isValid(i)) ans.push_back(i);
+        }
+        return ans;
+    }
+};
