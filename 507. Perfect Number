@@ -1,0 +1,15 @@
+class Solution {
+public:
+    bool checkPerfectNumber(int num) {
+        int sum=0;
+        if(num==1) return 0;
+        for(int i=2;i*i<=num;i++){
+            if(num%i==0){
+                sum+=i;
+                if(i*i!=num) sum+=(num/i);
+            }
+        }
+        if(sum+1==num) return 1;
+        else return 0;
+    }
+};
