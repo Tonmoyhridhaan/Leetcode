@@ -1,0 +1,13 @@
+class Solution {
+public:
+    uint32_t reverseBits(uint32_t n) {
+        bitset<32>arr = n;
+        n=0;
+        //cout << arr << endl;
+        
+        for(int i=31;i>=0;i--){
+            n += arr[i]*(1<<(31-i));
+        }
+        return n;
+    }
+};
