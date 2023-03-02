@@ -1,0 +1,17 @@
+#include<istream>
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        
+        if(x<0){
+            return false;
+        }
+        long long n=0,xx=x;
+        while(xx!=0){
+            n*=10;
+            n+=(xx%10);
+            xx=xx/10;
+        }
+        return n==(long long)x;
+    }
+};
